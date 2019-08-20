@@ -3,7 +3,11 @@ use std::{
     hash::{Hash, Hasher},
 };
 
+#[cfg(feature = "with-serde")]
+use serde::{Deserialize, Serialize};
+
 #[derive(Debug, Clone, Eq)]
+#[cfg_attr(feature = "with-serde", derive(Serialize, Deserialize))]
 pub struct ColumnId {
     id: usize,
     name: String,

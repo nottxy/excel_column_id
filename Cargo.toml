@@ -1,6 +1,6 @@
 [package]
 name = "excel_column_id"
-version = "0.1.0"
+version = "0.1.4"
 license = "MIT"
 authors = ["Bob <nottxy@gmail.com>"]
 description = "Convert to Excel Column name from number"
@@ -9,4 +9,8 @@ repository = "https://github.com/nottxy/excel_column_id"
 keywords = ["excel"]
 edition = "2018"
 
+[features]
+with-serde = ["serde"]
+
 [dependencies]
+serde = { version = "1.0", features = ["derive"], optional = true }
